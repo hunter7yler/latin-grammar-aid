@@ -1,5 +1,17 @@
 import tkinter as tk
+from tkinter.filedialog import askopenfilename
 
+def open_file(): #here
+    """Open a file for editing."""
+    filepath = askopenfilename(
+        filetypes=[("Text Files", "*.txt"), ("All Files", "*.*")]
+    )
+    if not filepath:
+        return
+
+    #loading code here
+
+    #window.title(f"Simple Text Editor - {filepath}")
 
 # imports list of declensions from declensions.csv and loads window for user review
 
@@ -60,7 +72,7 @@ window.title("Latin Declension")
 
 # frame generation
 fl = []
-for i in range(9):
+for i in range(10): #generate grid of frames
     if i < 3:
         window.columnconfigure(i, weight=1, minsize=75)
     window.rowconfigure(i, weight=1, minsize=50)
@@ -74,7 +86,7 @@ for i in range(9):
 
         fl.append(frame)
 
-# widget generation
+# widget define
 lbl_command = tk.Label(master=fl[0], text="Decline:")
 lbl_n = tk.Label(master=fl[1], text=declensions[data_index][0])
 lbl_sg = tk.Label(master=fl[4], text="sg.")
@@ -100,15 +112,19 @@ lbl_abl = tk.Label(master=fl[18], text="abl.")
 sabl = tk.Entry(master=fl[19], width=10)
 pabl = tk.Entry(master=fl[20], width=10)
 
-btn_convert = tk.Button(master=fl[21], text="check", command=check)
+btn_convert = tk.Button(master=fl[21], text="Check", command=check)
 lbl_response = tk.Label(master=fl[22], text="...")
 
-btn_prev = tk.Button(master=fl[24], text="prev", command=prev)
-btn_next = tk.Button(master=fl[25], text="next", command=next)
+btn_prev = tk.Button(master=fl[24], text="Prev", command=prev)
+btn_next = tk.Button(master=fl[25], text="Next", command=next)
+btn_load = tk.Button(master = fl[26], text="Load", command=open_file)
 
-# pack labels
-labels = [lbl_command, lbl_n, lbl_sg, lbl_pl, lbl_nom, snom, pnom, lbl_gen, sgen, pgen, lbl_dat, sdat, pdat, lbl_acc,
-          sacc, pacc, lbl_abl, sabl, pabl, btn_convert, lbl_response, btn_prev, btn_next]
+#widget place
+labels = [lbl_command, lbl_n, lbl_sg, lbl_pl, lbl_nom, snom, pnom,
+          lbl_gen, sgen, pgen, lbl_dat, sdat, pdat, lbl_acc,
+          sacc, pacc, lbl_abl, sabl, pabl, btn_convert, lbl_response,
+          btn_prev, btn_next, btn_load]
+
 for label in labels:
     label.pack(padx=5, pady=5)
 
