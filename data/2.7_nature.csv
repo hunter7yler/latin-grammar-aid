@@ -1,0 +1,18 @@
+silv, 1, f
+umbr, 1, f
+cael, 2, n
+vent, 2, m
+animal, 3, n #this one needs help
+ign, 3, m, ignis
+pont, 3, m, pons
+homin, 3, m, homo
+mont, 3, m, mons
+arbor, 3, f
+flumin, 3, n, flumen
+imbr, 3, m, imber, #needs help, pgen=imbrium
+perfl, 1, v, ai
+del, 2, v, ai
+ascend, 3, v, ai
+flu, 3, v, ai
+descend, 3, v, ai
+ex, 3, v, ai, #nh exeo, exeunt

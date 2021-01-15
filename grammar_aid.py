@@ -153,7 +153,6 @@ class DeclPage(tk.Frame):
         else:
             self.lbl_response["text"] = "Try again."
 
-
 class ConjPage(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
@@ -209,7 +208,6 @@ class ConjPage(tk.Frame):
             self.lbl_response["text"] = "Correct!"
         else:
             self.lbl_response["text"] = "Try again."
-
 
 
 app = WindowNav()
