@@ -7,12 +7,15 @@ d_dict['2n'] = ['um', 'i', 'o', 'um', 'o', 'a', 'orum', 'is', 'a', 'is']
 d_dict['3m'] = ['', 'is', 'i', 'em', 'e', '', 'um', 'ibus', 'es', 'ibus']
 d_dict['3f'] = ['', 'is', 'i', 'em', 'e', '', 'um', 'ibus', 'es', 'ibus']
 d_dict['3n'] = ['', 'is', 'i', '', 'e', 'a', 'um', 'ibus', 'a', 'ibus']
+d_dict['5m'] = ['es', 'ei', 'ei', 'em', 'e', 'es', 'erum', 'ebus', 'es', 'ebus']
+d_dict['5f'] = ['es', 'ei', 'ei', 'em', 'e', 'es', 'erum', 'ebus', 'es', 'ebus']
 
 #verbs
 c_dict = {}
-c_dict['1'] = ['o', 'as', 'at', 'amus', 'atis', 'ant', 'are']
-c_dict['2'] = ['eo', 'es', 'et', 'emus', 'etis', 'ent', 'ere']
-c_dict['3'] = ['o', 'is', 'it', 'imus', 'itis', 'unt', 'ere']
+c_dict['0'] = ['', '', '', '', '', '', ''] #irregulars
+c_dict['1'] = ['o', 'as', 'at', 'amus', 'atis', 'ant']
+c_dict['2'] = ['eo', 'es', 'et', 'emus', 'etis', 'ent']
+c_dict['3'] = ['o', 'is', 'it', 'imus', 'itis', 'unt']
 c_dict['4'] = ['o', 's', 't', 'mus', 'tis', 'unt']
 
 class Word():
@@ -47,5 +50,6 @@ class Word():
                 self.forms.append(self.root + ending_set[i])
 
 
-
+#skipped loquor, loqueris in 2.1
+#skipped velle, vult
 

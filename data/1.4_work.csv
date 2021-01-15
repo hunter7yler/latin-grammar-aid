@@ -1,0 +1,32 @@
+pecuni, 1, f
+medic, 1, f
+medic, 2, m
+professor, 3, m, professor
+ratiocinator, 3, m, ratiocinator
+numer, 1, v, ai
+san, 1, v, ai
+scaen, 1, f
+agricol, 1, f
+ager, 2, m
+architectus, 2, m
+aedifici, 2, n
+theatr, 2, n
+histrion, 3, m, histrio
+constru, 3, v, ai
+epistul, 1, f
+pictur, 1, f
+tabellari, 2, m
+pictor, 3, m pictor
+pistor, 3, m, pistor,
+port, 1, v, ai
+ping, 3, v, ai
+coqu, 3, v, ai
+poet, 1, f
+coqu, 2, m
+cib, 2, m
+milit, 3, m miles
+mercator, 3, m, mercator
+carmin, 3, n, carmen
+pugn, 1, v, ai
+em, 3, v, ai
+vend, 3, v, ai
