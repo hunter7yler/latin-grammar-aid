@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter.filedialog import askopenfilename
+from word_processor import Word
 
 class WindowNav(tk.Tk):
 
@@ -28,7 +29,7 @@ class WindowNav(tk.Tk):
     def show_frame(self, cont):
         frame = self.frames[cont]
         if cont in [DeclPage, ConjPage]:
-            frame.lbl_n["text"] = self.current_data[self.data_index][0]
+            frame.lbl_n["text"] = self.current_data[self.data_index].forms[0]
         frame.tkraise()
 
     def open_file(self):
@@ -43,15 +44,14 @@ class WindowNav(tk.Tk):
             lines = text.split("\n")
             for line in lines:
                 sl = line.split(", ")
-                self.current_data.append(sl)
+                item = Word(root=sl[0], cat=sl[1], gpos=sl[2], add=sl[3:])
+                self.current_data.append(item)
 
-        if len(self.current_data[0]) == 10:
+        if self.current_data[0].pos == 'Noun':
             self.show_frame(DeclPage)
-        elif len(self.current_data[0]) == 6:
+        elif self.current_data[0].pos == 'Verb':
             self.show_frame(ConjPage)
-        else:
-            print("Unrecognized file format")
-            quit()
+
 
         self.title("Reviewing: {}".format(filepath.split("/")[-1]))
 
@@ -61,13 +61,10 @@ class WindowNav(tk.Tk):
         self.data_index -= 1
         if self.data_index == -1:
             self.data_index = len(self.current_data) - 1
-        if len(self.current_data[self.data_index]) == 10:
+        if self.current_data[self.data_index].pos == 'Noun':
             self.show_frame(DeclPage)
-        elif len(self.current_data[self.data_index]) == 6:
+        elif self.current_data[self.data_index].pos == 'Verb':
             self.show_frame(ConjPage)
-        else:
-            print("Unrecognized file format")
-            quit()
 
     def next(self, child):
         for response in child.response_set:
@@ -75,13 +72,10 @@ class WindowNav(tk.Tk):
         self.data_index += 1
         if self.data_index == len(self.current_data):
             self.data_index = 0
-        if len(self.current_data[self.data_index]) == 10:
+        if self.current_data[self.data_index].pos == 'Noun':
             self.show_frame(DeclPage)
-        elif len(self.current_data[self.data_index]) == 6:
+        elif self.current_data[self.data_index].pos == 'Verb':
             self.show_frame(ConjPage)
-        else:
-            print("Unrecognized file format")
-            quit()
 
 class StartPage(tk.Frame):
 
@@ -148,7 +142,7 @@ class DeclPage(tk.Frame):
         responses = []
         for response in self.response_set:
             responses.append(response.get())
-        if responses == self.cont.current_data[self.cont.data_index]:
+        if responses == self.cont.current_data[self.cont.data_index].forms:
             self.lbl_response["text"] = "Correct!"
         else:
             self.lbl_response["text"] = "Try again."
@@ -204,7 +198,7 @@ class ConjPage(tk.Frame):
         responses = []
         for response in self.response_set:
             responses.append(response.get())
-        if responses == self.cont.current_data[self.cont.data_index]:
+        if responses == self.cont.current_data[self.cont.data_index].forms:
             self.lbl_response["text"] = "Correct!"
         else:
             self.lbl_response["text"] = "Try again."
