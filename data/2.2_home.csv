@@ -1,0 +1,22 @@
+sell, 1, f
+vill, 1, f
+larari, 2, n
+tablin, 2, n
+ambul, 1, v, ai
+ambul, 1, v, ai
+sed, 2, v, ai
+insul, 1, f
+latrin, 1, f
+vi, 1, f
+cenacul, 2, n
+cubicul, 2, n
+culin, 1, f
+mustel, 1, f
+can, 3, m, canis
+mur, 3, m, mus
+capt, 1, v, ai
+armari, 2, n
+atri, 2, n
+vestiment, 2, n
+sol, 2, v, ai
+coqu, 3, v, ai
